@@ -142,7 +142,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_hearing_black_24dp"
+                    android:src="@drawable/ic_touch_app_black_24dp"
                     android:padding="10dp"/>
 
 
@@ -162,7 +162,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_hearing_black_24dp"
+                    android:src="@drawable/ic_touch_app_black_24dp"
                     android:padding="10dp"/>
 
 
@@ -183,7 +183,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_hearing_black_24dp"
+                    android:src="@drawable/ic_touch_app_black_24dp"
                     android:padding="10dp"/>
 
 
@@ -203,7 +203,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_hearing_black_24dp"
+                    android:src="@drawable/ic_touch_app_black_24dp"
                     android:padding="10dp"/>
 
 
@@ -232,7 +232,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_touch_app_black_24dp"
+                    android:src="@drawable/ic_hearing_black_24dp"
                     android:padding="10dp"/>
 
 
@@ -252,7 +252,7 @@
             <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:src="@drawable/ic_touch_app_black_24dp"
+                android:src="@drawable/ic_hearing_black_24dp"
                 android:padding="10dp"/>
 
 
@@ -273,7 +273,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_touch_app_black_24dp"
+                    android:src="@drawable/ic_hearing_black_24dp"
                     android:padding="10dp"/>
 
 
