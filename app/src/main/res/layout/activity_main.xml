@@ -301,7 +301,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_lightbulb_outline_black_24dp"
+                    android:src="@drawable/ic_realnosevector"
                     android:padding="10dp"/>
 
 
@@ -324,7 +324,7 @@
                     android:layout_width="64dp"
                     android:layout_height="64dp"
                     android:padding="10dp"
-                    android:src="@drawable/ic_lightbulb_outline_black_24dp" />
+                    android:src="@drawable/ic_realnosevector" />
 
 
 
@@ -353,7 +353,7 @@
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
-                    android:src="@drawable/ic_lightbulb_outline_black_24dp"
+                    android:src="@drawable/ic_svgtongue"
                     android:padding="10dp"/>
 
 
