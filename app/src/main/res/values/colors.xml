@@ -5,18 +5,9 @@
     <color name="colorAccent">#D81B60</color>
     <color name="backgroundcolor">#fcfcfc</color>
 
-    <color name="red">#d60000</color>
-    <color name="pink">#fe104d</color>
-    <color name="purple">#7c4dff</color>
-    <color name="blue">#2979ff</color>
-    <color name="lightblue">#18ffff</color>
-    <color name="darkblue">#23283a</color>
-    <color name="orange">#ef6c00</color>
-    <color name="lightgray">#ededed</color>
-    <color name="yello">#ffb300</color>
-    <color name="green">#00bfa5</color>
 
-    <color name="testcolorblue">#152b38</color>
+    <color name="preclick">#D81B60</color>
+    <color name="postclick">#fcfc</color>
 
 
 </resources>

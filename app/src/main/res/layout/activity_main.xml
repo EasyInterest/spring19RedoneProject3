@@ -12,6 +12,22 @@
     android:gravity="center"
     android:id="@+id/ll">
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/changecolors"
+            android:clickable="true"
+            android:id="@+id/changeColorsBtn"
+            android:onClick="setColors"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="horizontal"
@@ -19,11 +35,63 @@
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
-            android:id="@+id/bankcardId"
+            android:id="@+id/bankcardId1"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_margin="5dp">
+            android:layout_margin="5dp"
+            app:cardBackgroundColor="@color/preclick"
+            android:clickable="true"
+            android:onClick="changeCardColor"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+
+                >
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_remove_red_eye_black_24dp"
+                    android:padding="10dp"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId12"
+            app:cardBackgroundColor="@color/preclick"
+            android:clickable="true"
+            android:onClick="changeCardColor"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="5dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:src="@drawable/ic_remove_red_eye_black_24dp"
+                    android:padding="10dp"/>
+
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/preclick"
+            android:clickable="true"
+            android:onClick="changeCardColor"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_margin="5dp"
+            android:id="@+id/bankcardId3">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -40,31 +108,13 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_margin="5dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:src="@drawable/ic_remove_red_eye_black_24dp"
-                    android:padding="10dp"/>
-
-
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="5dp"
+            android:id="@+id/bankcardId4"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="5dp">
+            android:onClick="changeCardColor">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -81,30 +131,13 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
-            android:clickable="true"
             android:layout_width="64dp"
             android:layout_height="64dp"
-            android:layout_margin="5dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center">
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:src="@drawable/ic_remove_red_eye_black_24dp"
-                    android:padding="10dp"/>
-
-
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
-            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="5dp"
+            android:id="@+id/bankcardId5"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_margin="5dp">
+            android:onClick="changeCardColor">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -129,8 +162,10 @@
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId21"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
-            android:id="@+id/bankcardId"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -150,7 +185,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId22"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -171,7 +209,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId23"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -191,7 +232,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId24"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -219,8 +263,10 @@
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId31"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
-            android:id="@+id/bankcardId"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -240,7 +286,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
         android:foreground="?android:attr/selectableItemBackground"
+        android:id="@+id/bankcardId32"
+        app:cardBackgroundColor="@color/preclick"
         android:clickable="true"
+        android:onClick="changeCardColor"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_margin="10dp">
@@ -261,7 +310,10 @@
     </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId33"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -289,7 +341,10 @@
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId41"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -309,7 +364,10 @@
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId42"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
@@ -340,7 +398,10 @@
         android:layout_height="wrap_content">
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
+            android:id="@+id/bankcardId51"
+            app:cardBackgroundColor="@color/preclick"
             android:clickable="true"
+            android:onClick="changeCardColor"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:layout_margin="10dp">
