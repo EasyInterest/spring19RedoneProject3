@@ -60,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
     public void resetCards()
     {
         Toast.makeText(getApplicationContext(), "Reset Cards", Toast.LENGTH_LONG).show();
-        int viewid =
 
     }
 }
