@@ -45,10 +45,16 @@ public class ChangeColorsActivity extends AppCompatActivity {
 
             @Override
             public void onOk(AmbilWarnaDialog dialog, int color) {
+                String mycol = ""+color;
+
                 postClickBtnColor = color;
                 postClickBtn.setBackgroundColor(postClickBtnColor);
+                String cols = ""+postClickBtnColor;
+                DataHolder.getInstance().setData(cols);
             }
         });
+
+
         colorPicker.show();
     }
 }

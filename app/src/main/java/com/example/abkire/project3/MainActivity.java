@@ -20,12 +20,33 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<CardView> cardViewsClicked = new ArrayList<CardView>();
     private boolean finished = false;
     private Button resetButton;
+    private boolean first = true;
+    @Override
+    public void onResume()
+    {
+        super.onResume();
 
+
+
+        for(CardView c : cardViewsClicked)
+        {
+
+            c.setCardBackgroundColor(Integer.parseInt(DataHolder.getInstance().getData()));
+        }
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         resetButton = (Button) findViewById(R.id.reset_button);
+        if(first) {
+            DataHolder.getInstance().setData("" + getResources().getColor(R.color.postclick));
+            first = false;
+        }
+
+
 
 
         resetButton.setOnClickListener(new OnClickListener(){
@@ -37,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                     c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
                 }
                 viewIdList.clear();
+                cardViewsClicked.clear();
                 finished = false;
 
 
@@ -47,14 +69,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void  setColors(View view){
         // Intent to start new activity
+
         Intent intent = new Intent(MainActivity.this, ChangeColorsActivity.class);
         MainActivity.this.startActivity(intent);
     }
 
     public void changeCardColor(View view) {
+        String data = DataHolder.getInstance().getData();
+
         int viewid = view.getId();
         CardView card = view.findViewById(viewid);
-        card.setCardBackgroundColor(getResources().getColor(R.color.postclick));
+
+        card.setCardBackgroundColor(Integer.parseInt(data));
         if (!viewIdList.contains(viewid)) {
             viewIdList.add(viewid);
             cardViewsClicked.add(card);
