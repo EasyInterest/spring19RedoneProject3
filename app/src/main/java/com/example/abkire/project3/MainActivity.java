@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
     private boolean finished = false;
     private Button resetButton;
     private boolean first = true;
+
+
     @Override
     public void onResume()
     {
         getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
+            new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
         super.onResume();
 
 

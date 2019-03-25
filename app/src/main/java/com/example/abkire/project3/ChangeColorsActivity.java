@@ -1,6 +1,7 @@
 package com.example.abkire.project3;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class ChangeColorsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_colors);
 
@@ -26,8 +29,8 @@ public class ChangeColorsActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         postClickBtn = (Button)findViewById(R.id.postClickBtn);
-        postClickBtnColor = ContextCompat.getColor(ChangeColorsActivity.this, R.color.postclick);
-
+        postClickBtnColor = Integer.parseInt(DataHolder.getInstance().getData());
+        postClickBtn.setBackgroundColor(postClickBtnColor);
         postClickBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public  void onClick(View v){
