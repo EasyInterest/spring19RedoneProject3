@@ -2,6 +2,7 @@ package com.example.abkire.project3;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.media.MediaPlayer;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -24,8 +25,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onResume()
     {
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
         super.onResume();
-
 
 
         for(CardView c : cardViewsClicked)
@@ -36,15 +38,18 @@ public class MainActivity extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if(first) {
+            DataHolder.getInstance().setData("" + getResources().getColor(R.color.postclick));
+            first = false;
+        }
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
 
         resetButton = (Button) findViewById(R.id.reset_button);
-        if(first) {
-            DataHolder.getInstance().setData("" + getResources().getColor(R.color.postclick));
-            first = false;
-        }
+
 
 
 
