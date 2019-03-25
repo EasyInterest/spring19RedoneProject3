@@ -25,6 +25,15 @@
             android:onClick="setColors"
 
             />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reset"
+            android:clickable="true"
+            android:id="@+id/reset_button"
+            android:onClick="setColors"
+
+            />
 
     </LinearLayout>
     <LinearLayout
