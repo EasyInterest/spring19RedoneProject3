@@ -13,7 +13,14 @@
         android:orientation="horizontal"
         android:gravity="center"
         android:padding="10dp">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pre-Click Color"
+            android:id="@+id/preClickBtn"
+            android:background="@color/preclick"
 
+            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,6 +29,7 @@
             android:background="@color/postclick"
 
             />
+
 
 
     </LinearLayout>

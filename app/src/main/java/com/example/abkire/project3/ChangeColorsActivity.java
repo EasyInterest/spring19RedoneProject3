@@ -16,6 +16,8 @@ public class ChangeColorsActivity extends AppCompatActivity {
 
     Button postClickBtn;
     int postClickBtnColor;
+    Button preClickBtn;
+    int preClickBtnColor;
 
 
     @Override
@@ -37,6 +39,16 @@ public class ChangeColorsActivity extends AppCompatActivity {
                 openColorPicker();
             }
         });
+
+        preClickBtn = (Button)findViewById(R.id.preClickBtn);
+        preClickBtnColor = Integer.parseInt(DataHolder2.getInstance().getData());
+        preClickBtn.setBackgroundColor(preClickBtnColor);
+        preClickBtn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public  void onClick(View v){
+                openColorPicker2();
+            }
+        });
     }
 
     private void openColorPicker() {
@@ -54,6 +66,27 @@ public class ChangeColorsActivity extends AppCompatActivity {
                 postClickBtn.setBackgroundColor(postClickBtnColor);
                 String cols = ""+postClickBtnColor;
                 DataHolder.getInstance().setData(cols);
+            }
+        });
+
+
+        colorPicker.show();
+    }
+    private void openColorPicker2() {
+        AmbilWarnaDialog colorPicker = new AmbilWarnaDialog(this, preClickBtnColor, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+            @Override
+            public void onCancel(AmbilWarnaDialog dialog) {
+                // do nothing.
+            }
+
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+                String mycol = ""+color;
+
+                preClickBtnColor = color;
+                preClickBtn.setBackgroundColor(preClickBtnColor);
+                String cols = ""+preClickBtnColor;
+                DataHolder2.getInstance().setData(cols);
             }
         });
 

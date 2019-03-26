@@ -24,28 +24,33 @@ public class MainActivity extends AppCompatActivity {
     private boolean finished = false;
     private Button resetButton;
     private boolean first = true;
-    private boolean first2 = true;
-
 
     @Override
     public void onResume()
     {
+        String data = DataHolder.getInstance().getData();
+
+        String data2 = DataHolder2.getInstance().getData();
+
         //change color primary theme to post click color
         getSupportActionBar().setBackgroundDrawable(
             new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
         super.onResume();
 
         //Coming back from color picking activity update card colors of clicked cards we tracked
-        for(CardView c : cardViewsClicked)
-        {
-            // gets colored we stored from other activity
-            c.setCardBackgroundColor(Integer.parseInt(DataHolder.getInstance().getData()));
-        }
-        for(CardView c: cardsnotclicked)
-        {
-            c.setCardBackgroundColor(Integer.parseInt(DataHolder2.getInstance().getData()));
 
-        }
+            for(CardView c : cardViewsClicked)
+            {
+                // gets colored we stored from other activity
+                c.setCardBackgroundColor(Integer.parseInt(data));
+            }
+            for(CardView c: cardsnotclicked)
+            {
+                c.setCardBackgroundColor(Integer.parseInt(data2));
+
+            }
+
+
 
     }
     @Override
@@ -53,13 +58,10 @@ public class MainActivity extends AppCompatActivity {
         //initialize our data holder object that is storing our color so it is not null default to post click color
         if(first) {
             DataHolder.getInstance().setData("" + getResources().getColor(R.color.postclick));
+            DataHolder2.getInstance().setData("" + getResources().getColor(R.color.preclick));
             first = false;
         }
-        if(first2) {
-            DataHolder2.getInstance().setData("" + getResources().getColor(R.color.preclick));
 
-            first2 = false;
-        }
         //change primary color to post click color
         getSupportActionBar().setBackgroundDrawable(
                 new ColorDrawable(Integer.parseInt(DataHolder.getInstance().getData())));
@@ -109,16 +111,18 @@ public class MainActivity extends AppCompatActivity {
         resetButton.setOnClickListener(new OnClickListener(){
             @Override
             public void onClick(View v) {
+                String data2 = DataHolder2.getInstance().getData();
+
                 Toast.makeText(getApplicationContext(), "Reset Cards", Toast.LENGTH_LONG).show();
                 for(CardView c : cardViewsClicked)
                 {
                     //Reset cards to pre click color to restart game
-                    c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
+                    c.setCardBackgroundColor(Integer.parseInt(data2));
                 }
                 // clear tracking of clicked cards
                 for(CardView c: cardsnotclicked)
                 {
-                    c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
+                    c.setCardBackgroundColor(Integer.parseInt(data2));
 
                 }
 
@@ -169,7 +173,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void  setColors(View view){
         // Intent to start new activity
-
         Intent intent = new Intent(MainActivity.this, ChangeColorsActivity.class);
         MainActivity.this.startActivity(intent);
     }
