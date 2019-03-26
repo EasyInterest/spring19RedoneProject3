@@ -19,6 +19,8 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     ArrayList<Integer> viewIdList = new ArrayList<Integer>();
     ArrayList<CardView> cardViewsClicked = new ArrayList<CardView>();
+    ArrayList<CardView> cardsnotclicked = new ArrayList<CardView>();
+
     private boolean finished = false;
     private Button resetButton;
     private boolean first = true;
@@ -38,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
             // gets colored we stored from other activity
             c.setCardBackgroundColor(Integer.parseInt(DataHolder.getInstance().getData()));
         }
+        for(CardView c: cardsnotclicked)
+        {
+            c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
+
+        }
+
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +61,42 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        // get all card views for resetting
+        final CardView c1 = (CardView) findViewById(R.id.bankcardId1);
+        final CardView c2 = (CardView) findViewById(R.id.bankcardId3);
+        final CardView c3 = (CardView) findViewById(R.id.bankcardId4);
+        final CardView c4 = (CardView) findViewById(R.id.bankcardId5);
+        final CardView c5 = (CardView) findViewById(R.id.bankcardId12);
+        final CardView c6 = (CardView) findViewById(R.id.bankcardId21);
+        final CardView c7 = (CardView) findViewById(R.id.bankcardId22);
+        final CardView c8 = (CardView) findViewById(R.id.bankcardId23);
+        final CardView c9 = (CardView) findViewById(R.id.bankcardId24);
+        final CardView c10 = (CardView) findViewById(R.id.bankcardId31);
+        final CardView c11 = (CardView) findViewById(R.id.bankcardId32);
+        final CardView c12 = (CardView) findViewById(R.id.bankcardId33);
+        final CardView c13 = (CardView) findViewById(R.id.bankcardId41);
+        final CardView c14 = (CardView) findViewById(R.id.bankcardId42);
+        final CardView c15 = (CardView) findViewById(R.id.bankcardId51);
+        cardsnotclicked.add(c1);
+        cardsnotclicked.add(c2);
+        cardsnotclicked.add(c3);
+        cardsnotclicked.add(c4);
+        cardsnotclicked.add(c5);
+        cardsnotclicked.add(c6);
+        cardsnotclicked.add(c7);
+        cardsnotclicked.add(c8);
+        cardsnotclicked.add(c9);
+        cardsnotclicked.add(c10);
+        cardsnotclicked.add(c11);
+        cardsnotclicked.add(c12);
+        cardsnotclicked.add(c13);
+        cardsnotclicked.add(c14);
+        cardsnotclicked.add(c15);
+
+
+
+
         //If a user clicks reset reset all cardview background colors to pre click color
         resetButton = (Button) findViewById(R.id.reset_button);
 
@@ -66,8 +110,48 @@ public class MainActivity extends AppCompatActivity {
                     c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
                 }
                 // clear tracking of clicked cards
+                for(CardView c: cardsnotclicked)
+                {
+                    c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
+
+                }
+
+                cardsnotclicked.clear();
                 viewIdList.clear();
                 cardViewsClicked.clear();
+
+                final CardView c1 = (CardView) findViewById(R.id.bankcardId1);
+                final CardView c2 = (CardView) findViewById(R.id.bankcardId3);
+                final CardView c3 = (CardView) findViewById(R.id.bankcardId4);
+                final CardView c4 = (CardView) findViewById(R.id.bankcardId5);
+                final CardView c5 = (CardView) findViewById(R.id.bankcardId12);
+                final CardView c6 = (CardView) findViewById(R.id.bankcardId21);
+                final CardView c7 = (CardView) findViewById(R.id.bankcardId22);
+                final CardView c8 = (CardView) findViewById(R.id.bankcardId23);
+                final CardView c9 = (CardView) findViewById(R.id.bankcardId24);
+                final CardView c10 = (CardView) findViewById(R.id.bankcardId31);
+                final CardView c11 = (CardView) findViewById(R.id.bankcardId32);
+                final CardView c12 = (CardView) findViewById(R.id.bankcardId33);
+                final CardView c13 = (CardView) findViewById(R.id.bankcardId41);
+                final CardView c14 = (CardView) findViewById(R.id.bankcardId42);
+                final CardView c15 = (CardView) findViewById(R.id.bankcardId51);
+                cardsnotclicked.add(c1);
+                cardsnotclicked.add(c2);
+                cardsnotclicked.add(c3);
+                cardsnotclicked.add(c4);
+                cardsnotclicked.add(c5);
+                cardsnotclicked.add(c6);
+                cardsnotclicked.add(c7);
+                cardsnotclicked.add(c8);
+                cardsnotclicked.add(c9);
+                cardsnotclicked.add(c10);
+                cardsnotclicked.add(c11);
+                cardsnotclicked.add(c12);
+                cardsnotclicked.add(c13);
+                cardsnotclicked.add(c14);
+                cardsnotclicked.add(c15);
+
+
                 //Reset game flag
                 finished = false;
 
@@ -94,6 +178,7 @@ public class MainActivity extends AppCompatActivity {
         if (!viewIdList.contains(viewid)) {
             viewIdList.add(viewid);
             cardViewsClicked.add(card);
+            cardsnotclicked.remove(card);
         }
         //game over when 15 cards are prssed make a sound! and mark as already finished so we don't win until again until reset is pressed
         if(viewIdList.size() ==15 && !finished){

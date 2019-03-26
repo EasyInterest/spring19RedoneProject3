@@ -8,6 +8,8 @@
 
     <color name="preclick">#D81B60</color>
     <color name="postclick">#fcfc</color>
+    <color name="postclick2">#ffd382</color>
+
 
 
 </resources>
