@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean finished = false;
     private Button resetButton;
     private boolean first = true;
+    private boolean first2 = true;
 
 
     @Override
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         }
         for(CardView c: cardsnotclicked)
         {
-            c.setCardBackgroundColor(getResources().getColor(R.color.preclick));
+            c.setCardBackgroundColor(Integer.parseInt(DataHolder2.getInstance().getData()));
 
         }
 
@@ -53,6 +54,11 @@ public class MainActivity extends AppCompatActivity {
         if(first) {
             DataHolder.getInstance().setData("" + getResources().getColor(R.color.postclick));
             first = false;
+        }
+        if(first2) {
+            DataHolder2.getInstance().setData("" + getResources().getColor(R.color.preclick));
+
+            first2 = false;
         }
         //change primary color to post click color
         getSupportActionBar().setBackgroundDrawable(

@@ -1,6 +1,6 @@
 package com.example.abkire.project3;
 // saves our color from the color picker
-public class DataHolder {
+public class DataHolder2 {
     private String data;
     private String data2;
     public String getData() {return data;}
@@ -8,6 +8,6 @@ public class DataHolder {
 
 
 
-    private static final DataHolder holder = new DataHolder();
-    public static DataHolder getInstance() {return holder;}
+    private static final DataHolder2 holder = new DataHolder2();
+    public static DataHolder2 getInstance() {return holder;}
 }
